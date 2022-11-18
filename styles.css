@@ -8,7 +8,7 @@ body{
    
     background: rgb(166,166,166);
     background: radial-gradient(circle, rgba(166,166,166,1) 0%, rgba(142,142,142,1) 100%);
-
+    
     
 }
 #body1{
@@ -25,6 +25,10 @@ body{
     padding-top: 1em;
     padding-bottom: 1em;
     text-indent: 3em;
+    min-height: auto;
+    margin: auto;
+    /* flex-wrap: wrap; */
+    
   
    
 }
@@ -91,6 +95,7 @@ li a{
     justify-content: center;
     text-align: center;
     padding-top: 2em;
+    
    
 }
 
@@ -108,6 +113,9 @@ li a{
     margin: 0 auto;
    vertical-align: center;
    /* right: 12%; */
+   max-width: 100%;
+   
+ 
    
   
 
@@ -145,11 +153,48 @@ li a{
 #main-image h2{
     float: right;
     width: 60%;
+    font-size: 3rem;
+    text-decoration: none;
+    position: relative;
+    top: -5rem;
+    
+    
+}
+#mockupLink{
+    
+    color: black;
+   
 }
 
-#main-image p{
-    float: right;
-    width: 60%;
+a:link{
+    text-decoration: none;
+    color: black;
+   
+}
+a:visited{
+    text-decoration: none;
+ 
+}
+#main-image span{
+    
+       float: right;
+       box-sizing: border-box;
+       font-size: 1.2rem;
+       width: 800px;
+    
+    word-wrap: break-word;
     overflow: hidden;
-    text-align: center;
+    position: relative;
+    top: -4rem;
+    
+  
+    
+}
+
+
+@media(max-width: 1200px){
+    #first-paragraph{
+        width: 100%;
+        float: none;
+    }
 }
