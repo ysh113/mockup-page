@@ -11,9 +11,7 @@ body{
     
     
 }
-#body1{
 
-}
 
 
 
@@ -27,18 +25,28 @@ body{
     text-indent: 3em;
     min-height: auto;
     margin: auto;
-    /* flex-wrap: wrap; */
+  width: 100vw;
+   
+   
+    
+ 
+ 
+ 
     
   
    
 }
 
-li{
+#lists li{
     display: inline;
-    text-decoration: none;
-    font-size: 23px;
+    text-decoration: none; 
+   
     padding-right: 3em;
     padding-bottom: 2em;
+    min-width: 200px;
+ 
+  
+  
   
     
     
@@ -52,19 +60,45 @@ li a{
 #line{
    
    font-family: Arial, Helvetica, sans-serif;
-    font-size: 25px;
+    /* font-size: 1.5em; */
+    min-width: 500px;
+    font-weight: bold;
+
+
 }
 
 #li-text{
-    font-size: 14px;
+    /* font-size: 1.3em; */
+    width: 10vw;
+    min-width: 500px;
     font-weight: bold;
     font-family: Arial, Helvetica, sans-serif;
+ 
     
 }
 
 #search{
- float: right;
+/* float: right; */
+display:inline-block;
+padding:0.3em 1.2em;
+margin:0 0.1em 0.1em 0;
+border:0.16em solid rgba(255,255,255,0);
+border-radius:2em;
+box-sizing: border-box;
+text-decoration:none;
+font-family:'Roboto',sans-serif;
+font-weight:300;
+color:#FFFFFF;
+text-shadow: 0 0.04em 0.04em rgba(0,0,0,0.35);
+text-align:center;
+transition: all 0.2s;
 
+ 
+
+}
+
+#search:hover{
+     border-color: rgba(255,255,255,1);
 }
 
 #first-paragraph{
@@ -191,10 +225,44 @@ a:visited{
     
 }
 
+#box-container{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-image: linear-gradient(#f6b73c, #4d9f0c) 50;
+    border-style: solid;
+    border-width: 6px;
+
+    
+    background-color: black;
+    color: white;
+    width: 250px;
+    height: 395.2px;
+    left: 201px;
+    
+   
+
+
+}
+
+#box-container h3{
+}
+
 
 @media(max-width: 1200px){
     #first-paragraph{
         width: 100%;
         float: none;
+    }
+ 
+
+}
+
+
+@media all and(max-width:30em){
+    #search{
+        display: block;
+        margin: 0.2em auto;
     }
 }
