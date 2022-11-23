@@ -60,7 +60,7 @@ li a{
 #line{
    
    font-family: Arial, Helvetica, sans-serif;
-    /* font-size: 1.5em; */
+    font-size: 1.2012vw;
     min-width: 500px;
     font-weight: bold;
 
@@ -68,8 +68,8 @@ li a{
 }
 
 #li-text{
-    /* font-size: 1.3em; */
-    width: 10vw;
+    font-size: 0.9000vw;
+       width: 10vw;
     min-width: 500px;
     font-weight: bold;
     font-family: Arial, Helvetica, sans-serif;
@@ -227,36 +227,64 @@ a:visited{
 
 #box-container{
     position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     border-image: linear-gradient(#f6b73c, #4d9f0c) 50;
     border-style: solid;
     border-width: 6px;
-
-    
     background-color: black;
     color: white;
     width: 250px;
     height: 395.2px;
-    left: 201px;
+    
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    float: left;
+    
     
    
 
 
 }
 
-#box-container h3{
+#mini-card-grid{
+    width: 300px;
+    height: 350px;
+    position: relative;
+   padding: 1.5rem;
+    border-radius: 16px;
+    background: linear-gradient(85deg,#434343,#262626);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    transition: .2s;
+    margin: 0;
+    box-sizing: border-box;
+    float: right;
 }
 
 
-@media(max-width: 1200px){
+@media(max-width: 1500px){
     #first-paragraph{
         width: 100%;
         float: none;
     }
+    #lists{
+        width: 100%;
+        float: none;
+    }
+
+
  
 
+}
+
+@media(max-width:250px){
+    #box-container{
+        width: 100%;
+       
+    }
 }
 
 
