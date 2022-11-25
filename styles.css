@@ -4,18 +4,35 @@
     padding: 0;
     
 }
+
+*, :after, :before{
+    box-sizing: border-box;
+
+    /*after and before is pseudo-elements. The before tells the browser to add the content of the CSS rules before the selector. Ex. <a href = "www.google.com"> </a>. a::before {content: "*"} Then *www.google.com
+    ::After is the same but add the content of the css after the selector. Ex. <a href = "">Go this website. </a> a::after {content: "Lots of menu"} Then Go this website. Lots of menu*/
+}
 body{
    
     background: rgb(166,166,166);
     background: radial-gradient(circle, rgba(166,166,166,1) 0%, rgba(142,142,142,1) 100%);
+    max-width: var(--maxWidth);
+    margin: 0 auto;
+    padding: 0 var(--gap);
+    display: block;
+   
     
-    
+} 
+
+html{
+    --maxWidth: 1600px;   
+    --gap: 3rem;
+    overflow-x: hidden;
+    /* -- is custom properties that contain a value that can be used in other declarations using the var() function. EX. max-width: var(--maxWidth) */
 }
 
-
-
-
-
+html{
+    text-size-adjust: 100%;
+}
 
 #lists{
     text-decoration: none;
@@ -25,7 +42,10 @@ body{
     text-indent: 3em;
     min-height: auto;
     margin: auto;
-  width: 100vw;
+    width: 100%;
+    position: relative;
+
+ 
    
    
     
@@ -98,7 +118,7 @@ transition: all 0.2s;
 }
 
 #search:hover{
-     border-color: rgba(255,255,255,1);
+    border-color: rgba(255,255,255,1);
 }
 
 #first-paragraph{
@@ -115,6 +135,7 @@ transition: all 0.2s;
     align-items: center;
     justify-content: center;
    position: relative;
+  
     /* left:12%; */
    
     /* vertical-align: center; */
@@ -146,20 +167,15 @@ transition: all 0.2s;
     height: 140.83px;
     margin: 0 auto;
    vertical-align: center;
-   /* right: 12%; */
-   max-width: 100%;
-   
- 
-   
-  
+    max-width: 100%;
 
-     
-  
-      
- 
-      
-     
+
 }
+#main-image p{
+  
+    margin: 0;
+}
+
 
 #container h3{    
     color: black;
@@ -226,46 +242,114 @@ a:visited{
 }
 
 #box-container{
-    position: relative;
-    border-image: linear-gradient(#f6b73c, #4d9f0c) 50;
-    border-style: solid;
-    border-width: 6px;
-    background-color: black;
-    color: white;
-    width: 250px;
-    height: 395.2px;
-    
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-sizing: border-box;
-    float: left;
-    
-    
-   
-
-
-}
-
-#mini-card-grid{
-    width: 300px;
-    height: 350px;
-    position: relative;
-   padding: 1.5rem;
-    border-radius: 16px;
-    background: linear-gradient(85deg,#434343,#262626);
-    color: #fff;
+     position: relative;
+     border-image: linear-gradient(#f6b73c, #4d9f0c) 50;
+     border-style: solid;
+     border-width: 6px;
+     background-color: black;
+     color: white;
+     /* width: 250px;
+    height: 395.2px; */
+     margin-top: 4rem;
+    flex: 0 0 250px;
+    margin-right: 1rem;
     display: flex;
     flex-direction: column;
-    transition: .2s;
-    margin: 0;
+      justify-content: center;
+    padding: 1.5rem;
+    float: left;
+    box-sizing: border-box; 
+    align-items: center;
+ 
+
+ 
+   
+    }
+
+ #box-container h3{
+    position: relative;
+    z-index: 3;
+ }
+
+  
+
+    #box-container::before{
+    content: "";
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    width: calc(100% + 10px);
+    height: calc(100% + 10px);
+    z-index: 1;
+    border-radius: 12px;
     box-sizing: border-box;
-    float: right;
+    }
+
+    #box-container:after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    z-index: 2;
+    border-radius: 8px;
+    box-sizing: border-box;
+    }
+
+
+
+#mini-card-grid{
+    width: 1494.41px;
+    height: 465.59px;
+    position: relative;
+   padding: 1.5rem;
+    
+      color: #fff;
+   display: flex;
+    flex-direction: row;
+    overflow-x: scroll;
+    gap: 1rem;
+   
+   
+    box-sizing: content-box;
+    align-items: center;
+    float: left;
+    
+
+   
+    
 }
 
 
-@media(max-width: 1500px){
+
+#mini-card{
+    min-width: 300px;
+    min-height: 350px;
+    padding: 1.5rem;
+    border-radius: 16px;
+    background: linear-gradient(85deg,#434343,#262626);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    box-sizing: border-box;
+   
+    
+}
+
+#mid-section{
+   
+    box-sizing: content-box;
+    display: flex;
+    margin: 0 0 var(--gap) 0;
+    position: relative;
+    
+   
+}
+
+@media(max-width: 1600px){
     #first-paragraph{
         width: 100%;
         float: none;
@@ -276,16 +360,21 @@ a:visited{
     }
 
 
+   
  
 
 }
 
-@media(max-width:250px){
-    #box-container{
+
+
+ /* @media(max-width:300px){
+    #mini-card-grid{
         width: 100%;
-       
+
     }
-}
+}  */
+
+
 
 
 @media all and(max-width:30em){
@@ -293,4 +382,19 @@ a:visited{
         display: block;
         margin: 0.2em auto;
     }
+}
+
+
+@media (min-width: 1200px) {
+#mid-section:after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 3rem;
+    bottom: 3.6rem;
+    width: 5px;
+    border-radius: 5px;
+
+}
+
 }
