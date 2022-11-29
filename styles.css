@@ -1,4 +1,25 @@
 
+/* Display   -  An inline element will not accept height or width. It will only accept margin and padding. Margin and padding will push elements horizontally, not vertically.
+                An inline-block is like inline except it will accept width and height. Similar to inline how it it will set inline with the natural flow of text
+                A block is like container elements, like div, section, and ul. It does not sit inline but break past them. 
+                Flex is for layout. Flex work with contents 
+
+
+
+*/
+
+/* Position    - Static is default. Left, right, top, bottom, z-index wont work
+                 relative is when original position remains in the flow of the document like static but left, right, and etc will work.
+                 Absolute is when an element is removed from the flow of the document and other elements will behave as if the element is not there. 
+                 Fixed is like absoulte but it can stick to any position relative to the document. It is also unaffected by scrolling
+
+
+
+*/
+
+
+
+
 *{
     margin: 0;
     padding: 0;
@@ -169,8 +190,16 @@ transition: all 0.2s;
    vertical-align: center;
     max-width: 100%;
 
+   
+   
+   
 
 }
+
+p{
+    float: right;
+}
+
 #main-image p{
   
     margin: 0;
@@ -359,10 +388,15 @@ a:visited{
         float: none;
     }
 
-
    
  
 
+}
+@media(max-width:1600px){
+    #main-image{
+        width: 100%;
+        float: none;
+    }
 }
 
 
